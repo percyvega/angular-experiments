@@ -1,0 +1,15 @@
+Username: {{ username }}
+<br/>
+value="username" <input class="demo" value="username">
+<br/>
+value={{username&#125;'&#125; <input class="demo" value="{{username}}">
+<br/>
+[value]="'username'" <input class="demo" [value]="'username'">
+<br/>
+[value]="username" <input class="demo" [value]="username">
+<br/>
+<br/>
+<button [textContent]="'Change ' + username" type=button (click)="onButtonClicked()"></button>
+<br/>
+<br/>
+<input #usernameInput class="demo" (keyup)="onKeyup(usernameInput.value)" [value]="username">
