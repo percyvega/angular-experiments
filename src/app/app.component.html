@@ -3,15 +3,16 @@
 </div>
 
 <div class="courses">
-  @for (course of COURSES; track course.id;
-    let i = $index; let tot = $count; ) {
-    {{ i + 1 }} out of {{ tot }}
+  @for (course of COURSES; track course.id) {
+    {{ $index + 1 }} out of {{ $count }}
     <app-course-card (courseSelected)="onCourseSelected($event)"
                      [class.is-first]="$first"
                      [class.is-last]="$last"
                      [class.is-even]="$even"
                      [class.is-odd]="$odd"
-                     [course]="course" [index]="i"/>
+                     [course]="course"
+                     [index]="$index"
+    />
   } @empty {
     <h1>No courses found!</h1>
   }
