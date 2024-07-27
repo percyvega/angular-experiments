@@ -12,7 +12,7 @@ export const COURSES: Course[] = [
   {
     id: 2,
     description: "RxJs In Practice Course",
-    iconUrl: 'https://s3-us-west-1.amazonaws.com/angular-university/course-images/rxjs-in-practice-course.png',
+    // iconUrl: 'https://s3-us-west-1.amazonaws.com/angular-university/course-images/rxjs-in-practice-course.png',
     longDescription: "Understand the RxJs Observable pattern, learn the RxJs Operators via practical examples",
     category: 'BEGINNER',
     lessonsCount: 10
@@ -22,7 +22,7 @@ export const COURSES: Course[] = [
     id: 3,
     description: 'NgRx In Depth',
     longDescription: "Learn the modern Ngrx Ecosystem, including Store, Effects, Router Store, Ngrx Entity, Dev Tools and Schematics.",
-    iconUrl: 'https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-ngrx-course.png',
+    // iconUrl: 'https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-ngrx-course.png',
     category: 'ADVANCED'
   },
 
@@ -46,7 +46,7 @@ export const COURSES: Course[] = [
     id: 6,
     description: 'Angular PWA Course',
     longDescription: "<p class='course-description'>Learn Angular Progressive Web Applications, build the future of the Web Today.",
-    iconUrl: 'https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-pwa-course.png',
+    // iconUrl: 'https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-pwa-course.png',
     category: 'ADVANCED',
     lessonsCount: 8
   },
@@ -61,7 +61,7 @@ export const COURSES: Course[] = [
     id: 8,
     description: 'Complete Typescript Course',
     longDescription: "Complete Guide to Typescript From Scratch: Learn the language in-depth and use it to build a Node REST API.",
-    iconUrl: 'https://angular-academy.s3.amazonaws.com/thumbnails/typescript-2-small.png',
+    // iconUrl: 'https://angular-academy.s3.amazonaws.com/thumbnails/typescript-2-small.png',
     category: 'BEGINNER'
   },
   {

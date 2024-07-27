@@ -1,9 +1,16 @@
 <div class="course-card">
 
   <div class="course-title">
-    {{index}} {{ course.description }}
+    {{ index }} {{ course.description }}
   </div>
-  <img width="300" alt="Angular Logo" [src]="course.iconUrl"/>
+
+  @if (course.iconUrl) {
+    <img width="300" alt="Angular Logo" [src]="course.iconUrl"/>
+  } @else if (course.category == 'BEGINNER') {
+    <h2>No image available for this beginner course!</h2>
+  } @else {
+    <h2>No image available for this course!</h2>
+  }
 
   <div class="course-description">
     {{ course.longDescription }}
