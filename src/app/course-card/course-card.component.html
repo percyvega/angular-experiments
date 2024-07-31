@@ -1,10 +1,11 @@
 <div class="course-card">
 
-  <div class="course-title">
+  <div class="course-title" [ngClass]="myTitleClasses()"
+       [ngStyle]="courseTitleStyles()">
     {{ index }} {{ course.description }}
   </div>
 
-  @if (course.iconUrl) {
+  @if (isImageVisible()) {
     <img width="300" alt="Angular Logo" [src]="course.iconUrl"/>
   } @else if (course.category == 'BEGINNER') {
     <h2>No image available for this beginner course!</h2>
@@ -14,6 +15,23 @@
 
   <div class="course-description">
     {{ course.longDescription }}
+  </div>
+
+  <div class="course-category">
+    @switch (course.category) {
+      @case ("BEGINNER") {
+        <div class="category">Beginner</div>
+      }
+      @case ("INTERMEDIATE") {
+        <div class="category">Intermediate</div>
+      }
+      @case ("ADVANCED") {
+        <div class="category">Advanced</div>
+      }
+      @case ("UNKNOWN") {
+        <div class="category">Unknown</div>
+      }
+    }
   </div>
 
   <button (click)="onCourseButtonClicked(course.description)">View Course</button>

@@ -4,12 +4,15 @@
 
 <div class="courses">
   @for (course of COURSES; track course.id) {
-    {{ $index + 1 }} out of {{ $count }}
+    <div
+      [class.is-first]="$first"
+      [class.is-last]="$last"
+      [class.is-even]="$even"
+      [class.is-odd]="$odd"
+    >
+      {{ $index + 1 }} out of {{ $count }}
+    </div>
     <app-course-card (courseSelected)="onCourseSelected($event)"
-                     [class.is-first]="$first"
-                     [class.is-last]="$last"
-                     [class.is-even]="$even"
-                     [class.is-odd]="$odd"
                      [course]="course"
                      [index]="$index"
     />

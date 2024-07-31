@@ -11,3 +11,21 @@
   max-width: 400px;
   margin: 50px auto;
 }
+
+.is-first {
+  border-bottom: 2px solid deepskyblue;
+  padding-top: 20px;
+}
+
+.is-last {
+  border-bottom: 2px solid deeppink;
+  padding-top: 20px;
+}
+
+.is-even {
+  color: blue;
+}
+
+.is-odd {
+  color: green;
+}
