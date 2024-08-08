@@ -2,9 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {UserComponent} from "./user/UserComponent";
 import {IsServerRuningComponent} from "./is-server-running/IsServerRuningComponent";
 import {CourseCardComponent} from "./course-card/course-card.component";
-import {NgOptimizedImage} from "@angular/common";
+import {AsyncPipe, NgOptimizedImage} from "@angular/common";
 import {Course} from "../database/course";
 import {HttpClient, HttpParams} from "@angular/common/http";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -15,12 +16,13 @@ import {HttpClient, HttpParams} from "@angular/common/http";
     UserComponent,
     IsServerRuningComponent,
     CourseCardComponent,
-    NgOptimizedImage
+    NgOptimizedImage,
+    AsyncPipe
   ],
 })
 export class AppComponent implements OnInit {
 
-  protected COURSES: Course[] = [];
+  protected COURSES$!: Observable<Course[]>;
 
   constructor(private http: HttpClient) {
   }
@@ -35,10 +37,7 @@ export class AppComponent implements OnInit {
       .set("page", "1")
       .set("pageSize", "7");
 
-    this.http.get<Course[]>('api/courses', {params})
-      .subscribe(
-        courses => this.COURSES = courses
-      )
+    this.COURSES$ = this.http.get<Course[]>('api/courses', {params});
   }
 
 }

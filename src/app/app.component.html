@@ -3,7 +3,7 @@
 </div>
 
 <div class="courses">
-  @for (course of COURSES; track course.id) {
+  @for (course of (COURSES$ | async); track course.id) {
     <div
       [class.is-first]="$first"
       [class.is-last]="$last"
