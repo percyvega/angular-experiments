@@ -17,7 +17,6 @@ export const COURSES: Course[] = [
     category: 'BEGINNER',
     lessonsCount: 10
   },
-
   {
     id: 3,
     description: 'NgRx In Depth',
@@ -25,7 +24,6 @@ export const COURSES: Course[] = [
     // iconUrl: 'https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-ngrx-course.png',
     category: 'ADVANCED'
   },
-
   {
     id: 4,
     description: "Angular for Beginners",
@@ -78,7 +76,6 @@ export const COURSES: Course[] = [
     longDescription: "Build Applications with the official Angular Widget Library",
     category: 'ADVANCED'
   }
-
 ];
 
 
