@@ -4,8 +4,8 @@ import {IsServerRuningComponent} from "./is-server-running/IsServerRuningCompone
 import {CourseCardComponent} from "./course-card/course-card.component";
 import {AsyncPipe, NgOptimizedImage} from "@angular/common";
 import {Course} from "../database/course";
-import {HttpClient, HttpParams} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {CoursesService} from "./service/courses.service";
 
 @Component({
   selector: 'app-root',
@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
 
   protected COURSES$!: Observable<Course[]>;
 
-  constructor(private http: HttpClient) {
+  constructor(private courseService: CoursesService) {
   }
 
   onCourseSelected($event: Course) {
@@ -32,12 +32,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    const params = new HttpParams()
-      .set("page", "1")
-      .set("pageSize", "7");
-
-    this.COURSES$ = this.http.get<Course[]>('api/courses', {params});
+    this.COURSES$ = this.courseService.loadCourses();
   }
 
 }
