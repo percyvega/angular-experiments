@@ -1,0 +1,18 @@
+<div class="form-container">
+  <div class="title">Keyboard Events Component</div>
+  <div class="form-container">
+    <label>First Name:</label>
+    <input (keyup)="changedFirstName($event)" type="text" [(ngModel)]="firstName" placeholder="Enter a first name...">
+    <h6>
+      <div ngNonBindable>{{ firstName }} :</div>
+      {{ firstName }}
+    </h6>
+    <hr/>
+    <label>Last Name:</label>
+    <input (keyup)="changedLastName($event)" type="text" [(ngModel)]="lastName" placeholder="Enter a last name...">
+    <h6>
+      <div ngNonBindable>{{ lastName }} :</div>
+      {{ lastName }}
+    </h6>
+  </div>
+</div>

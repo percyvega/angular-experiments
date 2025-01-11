@@ -1,0 +1,12 @@
+<div class="form-container">
+  <div class="title">Mouse Events Component</div>
+  <div class="form-container">
+    <button type="submit" (click)="resetAndAlert('Made it zero!')">Click to reset counter</button>
+    <br/><br/>
+    <button type="submit" (mouseenter)="incr()">Mouse-enter to increment counter</button>
+    <br/><br/>
+    <button type="submit" (mouseleave)="decr()">Mouse-leave to decrement counter</button>
+    <br/><br/>
+    <div class="result" (drag)="incr()">Drag this text to increment: {{ counter }}</div>
+  </div>
+</div>

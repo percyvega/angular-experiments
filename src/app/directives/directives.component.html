@@ -1,0 +1,23 @@
+<div class="form-container">
+  <div class="title">Directives Component</div>
+  <div class="form-container">
+    <div>Random number: {{ randomNumber }}</div>
+    <div [ngStyle]="{'background-color': isRandomNumberEven() ? 'yellow' : 'orange'}">Is number
+      even? {{ isRandomNumberEven() }}
+    </div>
+    <ng-container *ngIf="this.randomNumber >= 200; else numberIsTooSmall">
+      <div [ngClass]="numberClasses" [ngSwitch]="true">
+        <div *ngSwitchCase="randomNumber <= 400">Small</div>
+        <div *ngSwitchCase="400 < this.randomNumber && this.randomNumber <= 600">Medium</div>
+        <div *ngSwitchCase="600 < this.randomNumber && this.randomNumber <= 800">Large</div>
+        <div *ngSwitchDefault>Huge!</div>
+      </div>
+      <div [ngClass]="{'italicText': this.isRandomNumberEven(), 'boldText': this.isRandomNumberEven()}">Applied italic
+        and bold: {{ isRandomNumberEven() }}
+      </div>
+    </ng-container>
+    <ng-template #numberIsTooSmall>
+      <small>Tiny!</small>
+    </ng-template>
+  </div>
+</div>

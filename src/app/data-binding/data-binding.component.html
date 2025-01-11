@@ -1,0 +1,31 @@
+<div class="form-container">
+  <div class="title">Data-binding Component</div>
+  <div class="form-container">
+    <label ngNonBindable>[(ngModel)]="num1"</label>
+    <input (keyup)="calculateTotal()" type="number" id="num1" [(ngModel)]="num1" placeholder="Number 1">
+    <label ngNonBindable>[(ngModel)]="num2"</label>
+    <input (keyup)="calculateTotal()" type="number" id="num2" [(ngModel)]="num2" placeholder="Number 2">
+
+    <div class="result">{{ num1 }} + {{ num2 }} = {{ result }}</div>
+    <br/><br/>
+
+    [(ngModel)]="num1"
+    <input (keyup)="calculateTotal()" type="number" [(ngModel)]="num1">
+    <br/><br/>
+
+    [ngModel]="num1"
+    <input [ngModel]="num1">
+    <br/><br/>
+
+    [value]="num1"
+    <input [value]="num1">
+    <br/><br/>
+
+    <div ngNonBindable>{{num1}}</div>
+    <input value="{{num1}}">
+    <br/><br/>
+
+    <div ngNonBindable>{{ num1 + num2 }} = {{ result }}</div>
+    <textarea readonly>{{ num1 + num2 }} = {{ result }}</textarea>
+  </div>
+</div>
