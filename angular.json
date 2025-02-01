@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-experiments2": {
+    "angular-experiments": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/angular-experiments2",
+            "outputPath": "dist/angular-experiments",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-experiments2:build:production"
+              "buildTarget": "angular-experiments:build:production"
             },
             "development": {
-              "buildTarget": "angular-experiments2:build:development"
+              "buildTarget": "angular-experiments:build:development"
             }
           },
           "defaultConfiguration": "development"
